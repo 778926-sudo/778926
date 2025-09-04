@@ -8,7 +8,7 @@ Welcome to my ICS4U portfolio. I’ll use this site to post my work and reflecti
 - Second page [Reflection #2](./posts/secondmd)
 
 ## About me
-Hello my name is Abiyshan Uthayarajah, I like to play video games in my free time, and play basketball. My goals are to learn a basic understanding of computer science.
+Hello my name is Abiyshan Uthayarajah, I like to play video games in my free time, play basketball with my friends, and swim when its warm out. My main goal in this class is to learn a basic understanding of computer science. 
 
 ---
 *Update this page by editing `index.md` in your repository.*

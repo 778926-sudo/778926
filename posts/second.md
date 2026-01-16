@@ -1,4 +1,4 @@
-																		What I implemented today week 2 day 1:
+What I implemented today week 2 day 1:
 
 The main concept I implemented today was variables and data tracking. I used variable to track the game state and store important information such as which screen the game is on currently and the buttons that are used for navigating my UI
 
@@ -28,7 +28,12 @@ One challenge I faced was understanding how to switch between different screens 
 Another challenge was handling button clicks properly. I fixed this by checking the mouse position using a method that detects whether the mouse is inside a button’s area before changing the game state.
 // This class represents a player character in the game and controls its movement and behavior
 
+
+
+
+
 Learning Log – Day 2
+
 Topic: Selection Structure (if / else statements)
 
 What I implemented today
@@ -78,7 +83,20 @@ This fixed the issue since updateGame() updates the players movement and physics
 	
 
 
+
+
+
+
+
+
+
+
+
+
+
 Day 3 log: Repetition Structure
+
+
 
 The concept I implemented
 
@@ -104,7 +122,13 @@ To fix this, I added the hitCooldown variable and used repetition to reduce it o
 
 
 
+
+
+
+
+
 Learning log day 4:
+
 
 Topic: arrays and data structures
 
@@ -140,4 +164,3 @@ c)The challenges I encountered
 One challenge I faced was making sure the array did not overflow when spawning items. At first, items were spawning too often and could exceed the intended limit.
 
 So to fix that I added a MAX_ITEMS constant, tracked the current number of items using itemCount and used a check to stop spawning when the array was full: if (itemCount >= MAX_ITEMS) return;
-

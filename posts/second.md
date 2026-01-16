@@ -1,4 +1,4 @@
-What I implemented today week 2 day 1:
+																		What I implemented today week 2 day 1:
 
 The main concept I implemented today was variables and data tracking. I used variable to track the game state and store important information such as which screen the game is on currently and the buttons that are used for navigating my UI
 

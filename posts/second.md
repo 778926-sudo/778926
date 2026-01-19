@@ -164,3 +164,81 @@ c)The challenges I encountered
 One challenge I faced was making sure the array did not overflow when spawning items. At first, items were spawning too often and could exceed the intended limit.
 
 So to fix that I added a MAX_ITEMS constant, tracked the current number of items using itemCount and used a check to stop spawning when the array was full: if (itemCount >= MAX_ITEMS) return;
+
+
+
+
+
+
+
+
+Learning log day 5: use of custom function and error checking
+
+the concept I implemented
+
+The concept I implemented is Custom Functions and Error Checking / Restrictions.
+I created many custom methods to organize my game logic and added checks to prevent errors, invalid values, and unintended behavior during gameplay.
+
+void applyRPSDamage() {
+  if (p1.form == p2.form) return;
+
+  if (p1.form == 0 && p2.form == 2) p2Health -= 10;
+  else if (p2.form == 0 && p1.form == 2) p1Health -= 10;
+}
+
+
+Where did I used it and why?
+I used custom functions throughout my game to keep the code organized and readable.
+ Instead of writing all the logic inside draw(), I separated tasks into specific methods such as:
+updateGame() – handles movement, collisions, cooldowns, and item spawning
+
+
+applyRPSDamage() – handles Rock-Paper-Scissors damage rules
+
+
+spawnItem() – creates falling items safely
+
+
+resetGame() – resets health, positions, and items
+
+
+clearItems() – clears the falling item array
+
+
+For example, the applyRPSDamage() method handles all combat rules in one place.
+ This makes the code easier to debug and prevents repeated logic.
+I also used error checking and restrictions to not so valid situations, such as:
+Players taking damage every frame while touching
+
+
+Health going below 0 or above 100
+
+
+Too many falling items being created
+
+if (hitCooldown > 0) return;
+p1Health = max(0, p1Health - 12);
+p2Health = min(100, p2Health + 15);
+
+
+The challenges I faced
+
+One challenge I faced was that players were losing health too quickly when colliding, because damage was being applied every frame.
+To fix this, I implemented a hit cooldown system using a variable and a check inside updateGame():
+if (playersCollide() && hitCooldown == 0) {
+  applyRPSDamage();
+  hitCooldown = 20;
+}
+
+
+This restriction ensures damage only happens once every short period.
+Another challenge was preventing the game from crashing when resetting.
+ At first, I forgot to define clearItems(), which caused a compile error.
+I fixed this by writing the method and ensuring it safely resets the array:
+void clearItems() {
+  for (int i = 0; i < items.length; i++) {
+    items[i] = null;
+  }
+  itemCount = 0;
+}
+
